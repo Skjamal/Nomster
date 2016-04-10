@@ -53,6 +53,7 @@ Nomster::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :places
   resources :places, only: [:index]
   root 'places#index'
 end
