@@ -4,6 +4,6 @@ class AlterPlacesAddUserIdColumn < ActiveRecord::Migration
     add_index :places, :user_id
 
     add_column :places, :latitude, :float
-    add_index :places, :longitude, :float
+    add_column :places, :longitude, :float
   end
 end
