@@ -54,11 +54,12 @@ Nomster::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'places#index'
   resources :places
   resources :places, only: [:index]
-  root 'places#index'
   resources :places do
     resources :comments, only: :create
+    resources :photos
   end
   
 
