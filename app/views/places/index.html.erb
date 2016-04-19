@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width, height=device-height">
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -19,7 +21,6 @@
         Where Food Brings People Together
       </div>
     </div>
-    ...
   </div>
 
   <!-- Controls -->
@@ -36,26 +37,35 @@
 <% @places.each do |place| %>
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <h1><%= link_to place.name, place_path(place) %></h1>
-  <i><%= place.address %></i><br /><br />
+  <p><%= place.address %></><br />
   <p><%= place.description %></p><br />
 
   <% if place.user.present? %>
     <small><%= place.user.email %></small>
   <% end %>
 
+   <% if place.photos.last.present? %>
+         <%= image_tag place.photos.order("id ASC").last.picture, :class => 'img-responsive' %>
+        <% end %>
+
+
    <% if place.comments.present? %>
-        <div class="col-xs-12">
+      <div class="col-xs-12">
         <blockquote>
           <% if place.comments.last.humanized_rating.present? %>
-            <b><%= place.comments.last.humanized_rating %></b>
+            <b><%= place.comments.last.humanized_rating %></b>  -
           <% end %>
             <%= place.comments.last.message %>
             <small><%= place.comments.last.user.email %></small>
         </blockquote>
-      </div>
-    <% end %>
+        </div>
+       </div>
+     <% end %>
+</div>
+
 <% end %>
 
+<br style="clear:both" />
 <%= will_paginate @places, :class => "apple_pagination" %>
 
 
