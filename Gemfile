@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass', '~> 3.3.5.1'
 
-gem 'sprockets', '2.11.0'
+gem 'sprockets', '2.12.5'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
