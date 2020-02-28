@@ -27,7 +27,7 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'sprockets', '2.12.5'
 
